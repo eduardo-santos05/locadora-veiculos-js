@@ -5,4 +5,11 @@ export default function adicionarVeiculo(veiculos, novoVeiculo) {
             return false
         }
     }
+
+    if (veiculos.length > 0) {
+        novoVeiculo.id = veiculos[veiculos.length - 1].id + 1
+    } else {
+        novoVeiculo.id = 1
+    }
+
 }
