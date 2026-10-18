@@ -48,7 +48,40 @@ do {
             break;
         }
         case "3": {
-            // UPDATE
+            let id = Number(prompt('ID do veículo: '))
+            let novoModelo = prompt('Novo modelo (Enter para manter): ')
+            let ano = prompt('Novo ano (Enter para manter): ')
+
+            let novosDados = {
+                modelo: novoModelo,
+                ano: ano === '' ? undefined : Number(ano)
+            }
+
+            let novosAcessorios = []
+            let trocarAcessorios = prompt('Trocar os acessórios? (sim/nao): ').toLowerCase()
+
+            if (trocarAcessorios === 'sim') {
+                let adicionarAcessorio = 'sim'
+
+                while (adicionarAcessorio === 'sim') {
+                    let novoAcessorio = prompt('Acessório: ').trim()
+
+                    if (novoAcessorio !== '') {
+                        novosAcessorios.push(novoAcessorio)
+                    }
+
+                    adicionarAcessorio = prompt('Adicionar outro? (sim/nao): ').toLowerCase()
+                }
+
+                if (novosAcessorios.length > 0) {
+                    novosDados.acessorios = novosAcessorios
+                }
+            }
+
+            if (atualizarVeiculo(veiculos, id, novosDados)) {
+                console.log('Veículo atualizado com sucesso!')
+            }
+            
             break;
         }
         case "4": {
