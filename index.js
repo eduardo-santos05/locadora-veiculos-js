@@ -44,7 +44,7 @@ do {
             break;
         }
         case "2": {
-            // READ
+            listarVeiculos(veiculos)
             break;
         }
         case "3": {
