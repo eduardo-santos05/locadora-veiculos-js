@@ -85,7 +85,17 @@ do {
             break;
         }
         case "4": {
-            // DELETE
+            let id = Number(prompt('ID do veículo: '))
+            let confirmacao = prompt('Tem certeza? (sim/nao): ').toLowerCase()
+
+            if (confirmacao === 'sim') {
+                if (removerVeiculo(veiculos, id)) {
+                    console.log('Veículo removido com sucesso!')
+                }
+            } else {
+                console.log('Remoção cancelada.')
+            }
+
             break;
         }
         case "0": {
