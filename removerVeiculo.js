@@ -4,4 +4,6 @@ export default function removerVeiculo(veiculos, id) {
         console.log('Erro: Veículo não encontrado!')
         return false
     }
+    veiculos.splice(indice, 1)
+    return true
 }
