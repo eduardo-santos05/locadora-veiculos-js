@@ -12,4 +12,7 @@ export default function adicionarVeiculo(veiculos, novoVeiculo) {
         novoVeiculo.id = 1
     }
 
+    veiculos.push(novoVeiculo)
+    
+    return true
 }
